@@ -60,6 +60,9 @@ keymap M-k PREV_LINK
 keymap [ LINK_BEGIN
 keymap ] LINK_END
 
+# Open link in current tab
+keymap M-l GOTO_LINK
+
 # Open link in new tab
 keymap t TAB_LINK
 keymap T TAB_LINK
@@ -73,7 +76,7 @@ keymap o EXTERN_LINK
 keymap u PEEK_LINK
 
 # Link menus
-keymap M-L LIST_MENU
+#keymap M-L LIST_MENU
 keymap L LIST
 
 # Jump to link
@@ -134,6 +137,7 @@ keymap C-s ISEARCH
 # Buffers {{{
 
 # Go to previous buffer closing the current
+keymap M-h BACK
 keymap B BACK
 
 # Dispaly current buffer URL
