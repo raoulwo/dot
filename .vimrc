@@ -29,10 +29,6 @@ set nowritebackup
 set textwidth=72
 set nowrap
 
-" Line numbers
-set number
-set relativenumber
-
 " Tabs, spaces and indentation
 set expandtab
 set autoindent
