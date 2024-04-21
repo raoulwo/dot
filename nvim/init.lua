@@ -582,7 +582,6 @@ require('lazy').setup({
             },
           },
         },
-        ruby_ls = {},
         bashls = {},
       }
 
