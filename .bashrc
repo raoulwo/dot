@@ -17,12 +17,17 @@ export DEV="$HOME/Dev"
 export GITUSER="raoulwo"
 export REPOS="$HOME/Repos"
 export GHREPOS="$REPOS/github.com"
-export MYGH="$GHREPOS/$GITUSER"
-export DOT="$GHREPOS/dot"
-export LAB="$GHREPOS/lab"
-export NOTES="$GHREPOS/notes"
+export MYREPOS="$GHREPOS/$GITUSER"
+export DOT="$MYREPOS/dot"
+export LAB="$MYREPOS/lab"
+export NOTES="$MYREPOS/notes"
 export SCRIPTS="$DOT/scripts"
-export ZETTELKASTEN="$HOME/Zettelkasten"
+export ZETTEL="$HOME/Zettel"
+
+#### Path Configuration ########################################################
+
+# Append the $SCRIPTS directory
+PATH="${PATH}:$SCRIPTS"
 
 #### Aliases ###################################################################
 
@@ -34,11 +39,12 @@ alias ll='ls -l --color=auto'
 alias dev='cd $DEV'
 alias repos='cd $REPOS'
 alias ghrepos='cd $GHREPOS'
-alias mygh='cd $MYGH'
+alias myrepos='cd $MYREPOS'
 alias dot='cd $DOT'
 alias lab='cd $LAB'
 alias notes='cd $NOTES'
 alias scripts='cd $SCRIPTS'
+alias zettel='cd $ZETTEL'
 
 # clear
 alias c='clear'
