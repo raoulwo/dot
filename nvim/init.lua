@@ -566,7 +566,6 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -581,6 +580,7 @@ require('lazy').setup({
             },
           },
         },
+        ruby_ls = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -596,6 +596,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'rubocop',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
