@@ -104,6 +104,8 @@ vim.opt.number = true
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
+vim.opt.background = 'dark'
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
@@ -924,6 +926,7 @@ require('gruvbox').setup {
   contrast = 'hard', -- can be "hard", "soft" or empty string
   palette_overrides = {
     dark0_hard = '#1b1b1b',
+    dark1 = '#1b1b1b',
   },
   overrides = {},
   dim_inactive = false,
