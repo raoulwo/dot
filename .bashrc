@@ -1,29 +1,44 @@
-# Environment variables
+# ~/.bashrc
 
-export ZETTELKASTEN="/Users/raoul/Library/Mobile Documents/iCloud~md~obsidian/Documents/Zettelkasten"
+# Return if not running interactively
+[[ $- != *i* ]] && return
 
-# Prompt
-
-source ~/.git-prompt.sh
-
-PS1='\[\033[0;30m\]╔ \[\033[1;32m\]\u\[\033[0;30m\]@\[\033[1;34m\]\h\[\033[0;30m\]:\[\033[1;31m\]\W'\
-'$(__git_ps1 "\[\033[0;30m\](\[\033[1;33m\]%s\[\033[0;30m\])")\n\[\033[0;30m\]╚ \[\033[1;37m\]\$\[\033[0m\] '
-
-# Vi mode
+# Set vi mode
 set -o vi
 
-# Aliases
+#### Environment Variables #####################################################
+
+# Editor
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# Directories
+export DEV="$HOME/Dev"
+export GITUSER="raoulwo"
+export REPOS="$HOME/Repos"
+export GHREPOS="$REPOS/github.com"
+export MYGH="$GHREPOS/$GITUSER"
+export DOT="$GHREPOS/dot"
+export LAB="$GHREPOS/lab"
+export NOTES="$GHREPOS/notes"
+export SCRIPTS="$DOT/scripts"
+export ZETTELKASTEN="$HOME/Zettelkasten"
+
+#### Aliases ###################################################################
 
 # ls
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 
 # cd
-alias dev='cd ~/Dev'
-alias repos='cd ~/Repos'
-alias dot='cd ~/Repos/github.com/raoulwo/dot'
-alias lab='cd ~/Repos/github.com/raoulwo/lab'
-alias notes='cd ~/Repos/github.com/raoulwo/notes'
+alias dev='cd $DEV'
+alias repos='cd $REPOS'
+alias ghrepos='cd $GHREPOS'
+alias mygh='cd $MYGH'
+alias dot='cd $DOT'
+alias lab='cd $LAB'
+alias notes='cd $NOTES'
+alias scripts='cd $SCRIPTS'
 
 # clear
 alias c='clear'
@@ -37,4 +52,12 @@ alias grep='grep --color=auto'
 
 # path
 alias path='echo -e "${PATH//:/\\n}"'
+
+#### Prompt ####################################################################
+
+source ~/.git-prompt.sh
+
+PS1='\[\033[0;30m\]╔ \[\033[1;32m\]\u\[\033[0;30m\]@\[\033[1;34m\]\h\[\033[0;30m\]:'\
+'\[\033[1;31m\]\W$(__git_ps1 "\[\033[0;30m\](\[\033[1;33m\]%s\[\033[0;30m\])")'\
+'\n\[\033[0;30m\]╚ \[\033[1;37m\]\$\[\033[0m\] '
 
