@@ -44,7 +44,7 @@ alias dot='cd $DOT'
 alias lab='cd $LAB'
 alias notes='cd $NOTES'
 alias scripts='cd $SCRIPTS'
-alias zettel='cd $ZETTEL'
+alias zk='cd $ZETTEL'
 
 # clear
 alias c='clear'
