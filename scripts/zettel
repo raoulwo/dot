@@ -3,6 +3,7 @@
 cd "$ZETTEL" || exit
 
 timestamp="$(date +"%y%m%d%H%M%S")"
-touch "$ZETTEL/$timestamp"
+filename="${timestamp}.md"
+touch "$ZETTEL/$filename"
 
-nvim "$ZETTEL/$timestamp"
+nvim "$ZETTEL/$filename"
