@@ -4,6 +4,13 @@ cd "$ZETTEL" || exit
 
 timestamp="$(date +"%y%m%d%H%M%S")"
 filename="${timestamp}.md"
+
 touch "$ZETTEL/$filename"
+{
+	echo -en "\n"
+	echo -en "\n"
+	echo "# [[$timestamp]] References"
+
+} >>"$ZETTEL/$filename"
 
 nvim "$ZETTEL/$filename"
