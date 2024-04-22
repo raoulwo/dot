@@ -7,10 +7,16 @@ filename="${timestamp}.md"
 
 touch "$ZETTEL/$filename"
 {
+	echo "---"
+	echo "id: \"$timestamp\""
+	echo "aliases:"
+	echo "tags:"
+	echo "---"
+	echo "# "
 	echo -en "\n"
-	echo -en "\n"
-	echo "# [[$timestamp]] References"
+	echo "---"
+	echo "# References"
 
 } >>"$ZETTEL/$filename"
 
-nvim "$ZETTEL/$filename"
+nvim '+ normal 6G$' "$ZETTEL/$filename"
