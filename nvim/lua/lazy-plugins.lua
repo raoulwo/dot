@@ -1,52 +1,55 @@
 require("lazy").setup({
-  -- Gruvbox dark theme
-  require("plugins/gruvbox"),
+	-- Gruvbox dark theme
+	require("plugins/gruvbox"),
 
-  -- LSP config
-  require("plugins/lspconfig"),
+	-- LSP config
+	require("plugins/lspconfig"),
 
-  -- Telescope
-  require("plugins/telescope"),
+	-- Telescope
+	require("plugins/telescope"),
 
-  -- Treesitter
-  require("plugins/treesitter"),
+	-- Treesitter
+	require("plugins/treesitter"),
 
-  -- Code completion
-  require("plugins/cmp"),
+	-- Code completion
+	require("plugins/cmp"),
 
-  -- Highlight todo comments
-  require("plugins/todo-comments"),
+	-- Highlight todo comments
+	require("plugins/todo-comments"),
 
-  -- Preview pending keys
-  require("plugins/which-key"),
+	-- Preview pending keys
+	require("plugins/which-key"),
 
-  -- Add git signs to the gutter
-  require("plugins/gitsigns"),
+	-- Add git signs to the gutter
+	require("plugins/gitsigns"),
 
-  -- Automatic formatting
-  require("plugins/conform"),
+	-- Automatic formatting
+	require("plugins/conform"),
 
-  -- Adjust `shiftwidth` and `tabstop` heuristically
-  "tpope/vim-sleuth",
+	-- Linting
+	require("plugins/lint"),
 
-  -- Comment out code using `gc`
-  "numToStr/Comment.nvim",
+	-- Adjust `shiftwidth` and `tabstop` heuristically
+	"tpope/vim-sleuth",
+
+	-- Comment out code using `gc`
+	"numToStr/Comment.nvim",
 }, {
-  ui = {
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
-  },
+	ui = {
+		icons = vim.g.have_nerd_font and {} or {
+			cmd = "⌘",
+			config = "🛠",
+			event = "📅",
+			ft = "📂",
+			init = "⚙",
+			keys = "🗝",
+			plugin = "🔌",
+			runtime = "💻",
+			require = "🌙",
+			source = "📄",
+			start = "🚀",
+			task = "📌",
+			lazy = "💤 ",
+		},
+	},
 })
