@@ -20,6 +20,9 @@ require("lazy").setup({
   -- Preview pending keys
   require("plugins/which-key"),
 
+  -- Add git signs to the gutter
+  require("plugins/gitsigns"),
+
   -- Adjust `shiftwidth` and `tabstop` heuristically
   "tpope/vim-sleuth",
 
