@@ -38,6 +38,9 @@ require("lazy").setup({
 	-- Customizable statusline
 	require("plugins/lualine"),
 
+	-- UI replacement
+	require("plugins/noice"),
+
 	-- Adjust `shiftwidth` and `tabstop` heuristically
 	"tpope/vim-sleuth",
 
