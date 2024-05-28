@@ -42,7 +42,7 @@ require("lazy").setup({
 	require("plugins/noice"),
 
 	-- Better tabs,
-	require("plugins/barbar"),
+	-- require("plugins/barbar"),
 
 	-- Adjust `shiftwidth` and `tabstop` heuristically
 	"tpope/vim-sleuth",

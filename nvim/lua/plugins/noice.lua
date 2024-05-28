@@ -7,7 +7,7 @@ return {
 			-- UI component library
 			"MunifTanjim/nui.nvim",
 			-- Notification manager (Optional)
-			"rcarriga/nvim-notify",
+			-- "rcarriga/nvim-notify",
 		},
 		opts = {
 			lsp = {

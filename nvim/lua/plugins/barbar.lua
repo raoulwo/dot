@@ -1,3 +1,5 @@
+-- TODO: Fix the styling and set up keymaps
+
 return {
 	{
 		-- Better tabs
