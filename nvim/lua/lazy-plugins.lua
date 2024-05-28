@@ -32,6 +32,9 @@ require("lazy").setup({
 	-- Better textobjects, surroundings, statusline ...
 	require("plugins/mini"),
 
+	-- Browse the file system
+	require("plugins/neo-tree"),
+
 	-- Adjust `shiftwidth` and `tabstop` heuristically
 	"tpope/vim-sleuth",
 
