@@ -23,6 +23,9 @@ require("lazy").setup({
   -- Add git signs to the gutter
   require("plugins/gitsigns"),
 
+  -- Automatic formatting
+  require("plugins/conform"),
+
   -- Adjust `shiftwidth` and `tabstop` heuristically
   "tpope/vim-sleuth",
 
