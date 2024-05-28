@@ -29,6 +29,9 @@ require("lazy").setup({
 	-- Linting
 	require("plugins/lint"),
 
+	-- Better textobjects, surroundings, statusline ...
+	require("plugins/mini"),
+
 	-- Adjust `shiftwidth` and `tabstop` heuristically
 	"tpope/vim-sleuth",
 
