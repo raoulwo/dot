@@ -1,6 +1,6 @@
 require("lazy").setup({
-	-- Gruvbox dark theme
-	require("plugins/gruvbox"),
+	-- Gruvbox material theme
+	require("plugins/gruvbox-material"),
 
 	-- LSP config
 	require("plugins/lspconfig"),
