@@ -17,6 +17,9 @@ require("lazy").setup({
   -- Highlight todo comments
   require("plugins/todo-comments"),
 
+  -- Preview pending keys
+  require("plugins/which-key"),
+
   -- Adjust `shiftwidth` and `tabstop` heuristically
   "tpope/vim-sleuth",
 
