@@ -53,6 +53,9 @@ return {
           -- [Y]es to accept the completion
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
 
+          -- Manually trigger a completion
+          ["<C-space>"] = cmp.mapping.complete({}),
+
           -- Move to the right of an expansion location
           ["<C-l>"] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
