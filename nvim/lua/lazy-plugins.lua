@@ -44,6 +44,9 @@ require("lazy").setup({
 	-- Better tabs,
 	-- require("plugins/barbar"),
 
+	-- Git integration
+	"tpope/vim-fugitive",
+
 	-- Adjust `shiftwidth` and `tabstop` heuristically
 	"tpope/vim-sleuth",
 
