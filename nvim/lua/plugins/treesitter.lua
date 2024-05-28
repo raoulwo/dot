@@ -4,7 +4,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-      -- NOTE: Add languages to be installed here
+      -- NOTE Add languages to be installed here
       ensure_installed = {
         "bash",
         "c",

@@ -14,6 +14,9 @@ require("lazy").setup({
   -- Code completion
   require("plugins/cmp"),
 
+  -- Highlight todo comments
+  require("plugins/todo-comments"),
+
   -- Adjust `shiftwidth` and `tabstop` heuristically
   "tpope/vim-sleuth",
 

@@ -1,11 +1,11 @@
--- NOTE: For the difference between LSP and Treesitter see `:help lsp-vs-treesitter`
+-- NOTE For the difference between LSP and Treesitter see `:help lsp-vs-treesitter`
 
 return {
   {
     -- LSP Configuration
     "neovim/nvim-lspconfig",
     dependencies = {
-      -- NOTE: Mason must be loaded before its dependents
+      -- NOTE Mason must be loaded before its dependents
       -- Package manager for LSP servers, DAP servers, linters and formatters
       { "williamboman/mason.nvim", config = true },
       -- Bridges Mason with the LSP configuration
@@ -97,7 +97,7 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-      -- NOTE: Add language servers here
+      -- NOTE Add language servers here
 
       -- The language servers an be configured using the following keys:
       -- * `cmd`: A table used to override the default command used to start the server
@@ -122,7 +122,7 @@ return {
       -- Ensure the servers and tools are installed
       require("mason").setup()
 
-      -- NOTE: Add other tools to be installed by Mason here
+      -- NOTE Add other tools to be installed by Mason here
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         "stylua",
