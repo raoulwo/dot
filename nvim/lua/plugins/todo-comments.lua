@@ -1,3 +1,5 @@
+-- FIX The highlighting doesn't work yet
+
 return {
   {
     -- Highlighting for todo comments
