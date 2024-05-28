@@ -6,7 +6,7 @@ return {
 		config = function()
 			local lint = require("lint")
 
-			-- NOTE You can add linters here
+			-- NOTE: You can add linters here
 			lint.linters_by_ft = {
 				markdown = { "markdownlint" },
 			}

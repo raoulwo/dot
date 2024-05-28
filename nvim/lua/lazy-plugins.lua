@@ -35,6 +35,9 @@ require("lazy").setup({
 	-- Browse the file system
 	require("plugins/neo-tree"),
 
+	-- Customizable statusline
+	require("plugins/lualine"),
+
 	-- Adjust `shiftwidth` and `tabstop` heuristically
 	"tpope/vim-sleuth",
 

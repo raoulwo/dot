@@ -1,14 +1,12 @@
--- FIX The highlighting doesn't work yet
-
 return {
-  {
-    -- Highlighting for todo comments
-    "folke/todo-comments.nvim",
-    event = "VimEnter",
-    dependencies = {
-      -- Lua library for Nvim
-      "nvim-lua/plenary.nvim",
-    },
-    opts = {},
-  },
+	{
+		-- Highlighting for todo comments
+		"folke/todo-comments.nvim",
+		event = "VimEnter",
+		dependencies = {
+			-- Lua library for Nvim
+			"nvim-lua/plenary.nvim",
+		},
+		opts = {},
+	},
 }

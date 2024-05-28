@@ -1,4 +1,4 @@
--- TODO Configure neo-tree to work instead of netrw if that is possible
+-- TODO: Configure neo-tree to work instead of netrw if that is possible
 return {
 	-- Browse the file system
 	"nvim-neo-tree/neo-tree.nvim",
