@@ -41,6 +41,9 @@ require("lazy").setup({
 	-- UI replacement
 	require("plugins/noice"),
 
+	-- Obsidian integration
+	-- require("plugins/obsidian"),
+
 	-- Better tabs,
 	-- require("plugins/barbar"),
 
