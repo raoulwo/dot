@@ -7,6 +7,8 @@ vim.opt.relativenumber = true
 
 -- Highlight search
 vim.opt.hlsearch = true
+-- Incremental search
+vim.opt.incsearch = true
 
 -- Don't show the current mode
 vim.opt.showmode = false
@@ -42,3 +44,8 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 8
+
+-- Don't create a swapfile
+vim.opt.swapfile = false
+-- Don't backup a written file
+vim.opt.backup = false

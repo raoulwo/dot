@@ -38,7 +38,7 @@ return {
 					-- Go to the implementation of the word under your cursor
 					lsp_map("gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 					-- Go to the type definition of the word under your cursor
-					lsp_map("<leader>D", require("telescope.builtin").lsp_type_definitions, "[T]ype [D]efinition")
+					lsp_map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
 					-- Fuzzy find all symbols in your current document
 					lsp_map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
 					-- Fuzzy find all symbols in your current workspace
