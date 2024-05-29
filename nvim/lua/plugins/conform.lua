@@ -28,7 +28,11 @@ return {
 			end,
 			formatters_by_ft = {
 				-- NOTE: You can add formatters to run automatically here
+				bash = { "shfmt" },
+				javascript = { "prettier" },
 				lua = { "stylua" },
+				ruby = { "rubyfmt" },
+				typescript = { "prettier" },
 			},
 		},
 	},

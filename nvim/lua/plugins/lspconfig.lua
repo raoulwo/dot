@@ -110,7 +110,13 @@ return {
 			-- * `settings`: A table used to override the default settings passed when initializing a serve
 			local servers = {
 				-- See `:help lspconfig-all` for a list of all pre-configured LSPs
+				html = {},
+				cssls = {},
+				tsserver = {},
+				angularls = {},
+				emmet_ls = {},
 
+				bashls = {},
 				lua_ls = {
 					settings = {
 						Lua = {
@@ -120,6 +126,15 @@ return {
 						},
 					},
 				},
+				ruby_lsp = {},
+
+				dockerls = {},
+				docker_compose_language_service = {},
+
+				jsonls = {},
+				yamlls = {},
+
+				marksman = {},
 			}
 
 			-- Ensure the servers and tools are installed
@@ -128,6 +143,12 @@ return {
 			-- NOTE: Add other tools to be installed by Mason here
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
+				"markdownlint",
+				"prettier",
+				"shellcheck",
+				"shfmt",
+				"standardrb",
+				"rubyfmt",
 				"stylua",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

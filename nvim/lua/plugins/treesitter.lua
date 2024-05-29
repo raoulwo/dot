@@ -13,6 +13,7 @@ return {
 				"lua",
 				"luadoc",
 				"markdown",
+				"ruby",
 				"vim",
 				"vimdoc",
 			},

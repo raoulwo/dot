@@ -41,6 +41,9 @@ require("lazy").setup({
 	-- UI replacement
 	require("plugins/noice"),
 
+	-- Automatically close and rename html tags
+	require("plugins/ts-autotag"),
+
 	-- Obsidian integration
 	-- require("plugins/obsidian"),
 
