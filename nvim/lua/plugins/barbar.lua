@@ -1,4 +1,4 @@
--- TODO: Fix the styling and set up keymaps
+-- FIX: Fix the styling and set up keymaps
 
 return {
 	{
