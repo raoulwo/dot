@@ -26,3 +26,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Keep screen centered when using <C-d> or <C-u>
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Open Netrw
+vim.keymap.set("n", "<leader>n", "<cmd>Ex<CR>", { desc = "Open [N]etrw" })
