@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+
+ln sf "$PWD/nvim" "$HOME/.config/nvim"
+ln sf "$PWD/tmux" "$HOME/.config/tmux"
