@@ -58,15 +58,21 @@ map <Leader>j <Action>(GotoNextError)
 map <Leader>k <Action>(GotoPreviousError)
 
 " Open the switcher
-map \ <Action>(Switcher)
+map <Leader><Leader> <Action>(Switcher)
 
+" Open project window
+map <Leader>f <Action>(ActivateProjectToolWindow)
+" Open the terminal window
+map <Leader>t <Action>(ActivateTerminalToolWindow)
 " Hide all windows
 map <Leader>h <Action>(HideAllWindows)
 
 " Search files, symbols, grep...
-map <Leader><Leader> <Action>(SearchEverywhere)
+map <Leader>se <Action>(SearchEverywhere)
+map <Leader>sa <Action>(GotoAction)
 map <Leader>sf <Action>(GotoFile)
 map <Leader>ss <Action>(GotoSymbol)
+map <Leader>st <Action>(GotoClass)
 map <Leader>sg <Action>(FindInPath)
 
 " Refactor, reformat, rename, replace...
@@ -74,8 +80,3 @@ map <Leader>rr <Action>(Refactorings.QuickListPopupAction)
 map <Leader>rf <Action>(ReformatCode)
 map <Leader>rn <Action>(RenameElement)
 map <Leader>rp <Action>(Replace)
-
-" Extract interfaces, classes, modules...
-map <Leader>xi <Action>(ExtractInterface)
-map <Leader>xc <Action>(ExtractClass)
-map <Leader>xm <Action>(ExtractModule)
