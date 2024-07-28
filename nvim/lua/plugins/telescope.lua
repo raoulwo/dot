@@ -30,6 +30,13 @@ return {
 
 			-- See `:help telescope` and `:help telescope.setup()`
 			require("telescope").setup({
+				defaults = {
+					layout_config = {
+						horizontal = {
+							preview_width = 0.6,
+						},
+					},
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),

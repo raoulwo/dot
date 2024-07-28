@@ -20,7 +20,7 @@ require("lazy").setup({
 	require("plugins/todo-comments"),
 
 	-- Preview pending keys
-	require("plugins/which-key"),
+	-- require("plugins/which-key"),
 
 	-- Add git signs to the gutter
 	require("plugins/gitsigns"),
