@@ -1,0 +1,81 @@
+let mapleader = " "
+
+" Options
+set ideajoin
+set visualbell
+set number
+set relativenumber
+set scrolloff=8
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+" Plugins
+set commentary
+set highlightedyank
+
+" Clear search results
+nnoremap <Esc> :nohlsearch<CR>
+
+" Consistent with C and D
+nnoremap Y y$
+
+" Window navigation
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+
+" Splitting windows
+nmap <Leader>% :vsplit<CR>
+nmap <Leader>" :split<CR>
+
+" Move selection
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Center the view
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzz
+nnoremap N Nzz
+
+" Paste without overwriting buffer
+xnoremap <Leader>p "_dP
+
+" Yank into clipboard
+nnoremap <Leader>y "+y
+vnoremap <Leader>y "+y
+nmap <Leader>Y "+Y
+
+" Delete into black hole register
+nnoremap <Leader>d "_d
+vnoremap <Leader>d "_d
+
+" Go to next/previous errors
+map <Leader>j <Action>(GotoNextError)
+map <Leader>k <Action>(GotoPreviousError)
+
+" Open the switcher
+map \ <Action>(Switcher)
+
+" Hide all windows
+map <Leader>h <Action>(HideAllWindows)
+
+" Search files, symbols, grep...
+map <Leader><Leader> <Action>(SearchEverywhere)
+map <Leader>sf <Action>(GotoFile)
+map <Leader>ss <Action>(GotoSymbol)
+map <Leader>sg <Action>(FindInPath)
+
+" Refactor, reformat, rename, replace...
+map <Leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <Leader>rf <Action>(ReformatCode)
+map <Leader>rn <Action>(RenameElement)
+map <Leader>rp <Action>(Replace)
+
+" Extract interfaces, classes, modules...
+map <Leader>xi <Action>(ExtractInterface)
+map <Leader>xc <Action>(ExtractClass)
+map <Leader>xm <Action>(ExtractModule)
