@@ -10,6 +10,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+set history=1000
 
 " Plugins
 set commentary
@@ -53,19 +54,40 @@ nmap <Leader>Y "+Y
 nnoremap <Leader>d "_d
 vnoremap <Leader>d "_d
 
-" Go to next/previous errors
-map <Leader>j <Action>(GotoNextError)
-map <Leader>k <Action>(GotoPreviousError)
-
-" Open the switcher
+" Open the switcher, file history, file structure
 map <Leader><Leader> <Action>(Switcher)
+map <Leader>h <Action>(LocalHistory.ShowHistory)
+map <Leader>f <Action>(FileStructurePopup)
 
-" Open project window
-map <Leader>f <Action>(ActivateProjectToolWindow)
-" Open the terminal window
-map <Leader>t <Action>(ActivateTerminalToolWindow)
-" Hide all windows
-map <Leader>h <Action>(HideAllWindows)
+" Show intention actions
+map <Leader>i <Action>(ShowIntentionActions)
+
+" Open/Hide windows
+map <Leader>wg <Action>(ActivateVersionControlToolWindow)
+map <Leader>wp <Action>(ActivateProjectToolWindow)
+map <Leader>wt <Action>(ActivateTerminalToolWindow)
+map <Leader>wh <Action>(HideAllWindows)
+
+" Close editors
+map <Leader>q <Action>(CloseEditor)
+map <Leader>Q <Action>(CloseAllEditors)
+
+" Toggle zen, presentation modes
+map <Leader>mz <Action>(ToggleZenMode)
+map <Leader>mp <Action>(TogglePresentationMode)
+
+" Run/Debug configurations
+map <Leader>, <Action>(Run)
+map <Leader>. <Action>(Debug)
+map <Leader>/ <Action>(Stop)
+map <Leader>cr <Action>(ChooseRunConfiguration)
+map <Leader>cd <Action>(ChooseDebugConfiguration)
+
+" Git
+map <Leader>gg <Action>(Vcs.QuickListPopupAction)
+map <Leader>ga <Action>(Annotate)
+map <Leader>gc <Action>(CheckinProject)
+map <Leader>gp <Action>(Vcs.Push)
 
 " Search files, symbols, grep...
 map <Leader>se <Action>(SearchEverywhere)
@@ -78,5 +100,33 @@ map <Leader>sg <Action>(FindInPath)
 " Refactor, reformat, rename, replace...
 map <Leader>rr <Action>(Refactorings.QuickListPopupAction)
 map <Leader>rf <Action>(ReformatCode)
+map <Leader>ri <Action>(OptimizeImports)
 map <Leader>rn <Action>(RenameElement)
+map <Leader>rN <Action>(RenameFile)
 map <Leader>rp <Action>(Replace)
+
+" Jump to type declaration
+map gD <Action>(GotoTypeDeclaration)
+
+" Jump to next/previous tabs
+map <A-h> <Action>(PreviousTab)
+map <A-l> <Action>(NextTab)
+" Jump to next/previous errors
+map <A-j> <Action>(GotoNextError)
+map <A-k> <Action>(GotoPreviousError)
+
+" Jump to next/previous element under caret
+map gn <Action>(GotoNextElementUnderCaretUsage)
+map gN <Action>(GotoPrevElementUnderCaretUsage)
+
+" Use built-in navigation ...
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
+" ... but preserve default navigation
+map g<C-o> <C-o>
+map g<C-i> <C-i>
+
+" Toggle, remove, view breakpoints
+map <Leader>bt <Action>(ToggleLineBreakpoint)
+map <Leader>br <Action>(Debugger.RemoveAllBreakpoints)
+map <Leader>bv <Action>(ViewBreakpoints)
