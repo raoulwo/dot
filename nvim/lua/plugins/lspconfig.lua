@@ -40,10 +40,10 @@ return {
 					-- Go to the type definition of the word under your cursor
 					lsp_map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
 					-- Fuzzy find all symbols in your current document
-					lsp_map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+					lsp_map("<leader>f", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
 					-- Fuzzy find all symbols in your current workspace
 					lsp_map(
-						"<leader>ws",
+						"<leader>ss",
 						require("telescope.builtin").lsp_dynamic_workspace_symbols,
 						"[W]orkspace [S]ymbols"
 					)
