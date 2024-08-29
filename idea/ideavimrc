@@ -112,8 +112,8 @@ map gD <Action>(GotoTypeDeclaration)
 map <A-h> <Action>(PreviousTab)
 map <A-l> <Action>(NextTab)
 " Jump to next/previous errors
-map <A-j> <Action>(GotoNextError)
-map <A-k> <Action>(GotoPreviousError)
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
 
 " Jump to next/previous element under caret
 map gn <Action>(GotoNextElementUnderCaretUsage)

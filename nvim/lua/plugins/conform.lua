@@ -30,6 +30,7 @@ return {
 				-- NOTE: You can add formatters to run automatically here
 				bash = { "shfmt" },
 				lua = { "stylua" },
+				go = { "gofmt" },
 			},
 		},
 	},
