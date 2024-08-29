@@ -11,3 +11,4 @@ require("lazy-plugins")
 
 vim.opt.background = "dark"
 vim.cmd.colorscheme("gruvbox-material")
+-- vim.cmd.colorscheme("poimandres")

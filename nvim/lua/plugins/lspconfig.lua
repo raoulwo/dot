@@ -95,12 +95,6 @@ return {
 				end,
 			})
 
-			-- By default Nvim doesn't support everything part of the LSP spec
-			-- By adding nvim-cmp, luasnip and so on, Nvim has more capabilities in this regard
-			-- Here, we create new *capabilities* with nvim-cmp and broadcast them to the LSs
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
 			-- NOTE: Add language servers here
 
 			-- The language servers an be configured using the following keys:
@@ -120,6 +114,40 @@ return {
 					},
 				},
 			}
+
+			-- By default Nvim doesn't support everything part of the LSP spec
+			-- By adding nvim-cmp, luasnip and so on, Nvim has more capabilities in this regard
+			-- Here, we create new *capabilities* with nvim-cmp and broadcast them to the LSs
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+			local lspconfig = require("lspconfig")
+
+			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+				filetypes = { "html", "elixir", "eelixir", "heex" },
+				init_options = {
+					userLanguages = {
+						elixir = "html-eex",
+						eelixir = "html-eex",
+						heex = "html-eex",
+					},
+				},
+				settings = {
+					tailwindCSS = {
+						experimental = {
+							classRegex = {
+								'class[:]\\s*"([^"]*)"',
+							},
+						},
+					},
+				},
+			})
+
+			lspconfig.emmet_ls.setup({
+				capabilities = capabilities,
+				filetypes = { "html", "css", "elixir", "eelixir", "heex" },
+			})
 
 			-- Ensure the servers and tools are installed
 			require("mason").setup()

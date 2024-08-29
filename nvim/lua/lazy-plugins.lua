@@ -3,6 +3,8 @@ require("lazy").setup({
 	require("plugins/gruvbox-material"),
 	-- Kanagawa theme
 	require("plugins/kanagawa"),
+	-- Poimandres theme
+	require("plugins/poimandres"),
 
 	-- LSP config
 	require("plugins/lspconfig"),

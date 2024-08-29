@@ -10,6 +10,8 @@ vim.opt.hlsearch = true
 -- Incremental search
 vim.opt.incsearch = true
 
+vim.opt.wrap = false
+
 -- Expand tabs to spaces
 vim.opt.expandtab = true
 -- Tabs equal 2 spaces
