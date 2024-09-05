@@ -33,6 +33,9 @@ require("lazy").setup({
 	-- Linting
 	require("plugins/lint"),
 
+	-- Automatic pairs...
+	require("plugins/autopairs"),
+
 	-- Better textobjects, surroundings, statusline ...
 	require("plugins/mini"),
 
