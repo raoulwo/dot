@@ -51,7 +51,7 @@ return {
 					-- Rename the variable under your cursor
 					lsp_map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					-- Execute a code action (the cursor usually needs to be on top of an error/suggestion)
-					lsp_map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+					lsp_map("<leader>i", vim.lsp.buf.code_action, "[C]ode [A]ction")
 					-- Go to the declaration of the word under your cursor
 					lsp_map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 

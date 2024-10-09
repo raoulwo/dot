@@ -51,6 +51,9 @@ require("lazy").setup({
 	-- Automatically close and rename html tags
 	require("plugins/ts-autotag"),
 
+	-- VimTeX
+	require("plugins/vimtex"),
+
 	-- Obsidian integration
 	-- require("plugins/obsidian"),
 
