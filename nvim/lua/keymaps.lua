@@ -29,3 +29,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Open Netrw
 vim.keymap.set("n", "<leader>n", "<cmd>Ex<CR>", { desc = "Open [N]etrw" })
+
+-- Yank to system clipboard
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
