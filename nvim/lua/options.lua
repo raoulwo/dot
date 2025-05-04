@@ -14,10 +14,10 @@ vim.opt.wrap = false
 
 -- Expand tabs to spaces
 vim.opt.expandtab = true
--- Tabs equal 2 spaces
-vim.opt.tabstop = 2
--- Indentation equals 2 spaces
-vim.opt.shiftwidth = 2
+-- Tabs equal 4 spaces
+vim.opt.tabstop = 4
+-- Indentation equals 4 spaces
+vim.opt.shiftwidth = 4
 
 -- Don't show the current mode
 vim.opt.showmode = false
