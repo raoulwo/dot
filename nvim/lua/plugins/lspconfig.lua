@@ -97,6 +97,8 @@ return {
 
 			-- NOTE: Add language servers here
 
+			local lspconfig = require("lspconfig")
+
 			-- The language servers an be configured using the following keys:
 			-- * `cmd`: A table used to override the default command used to start the server
 			-- * `filetypes`: A table used to override the default list of file types associated with the LS
@@ -113,6 +115,16 @@ return {
 						},
 					},
 				},
+				ts_ls = {
+					root_dir = lspconfig.util.root_pattern({ "package.json", "tsconfig.json" }),
+					single_file_support = false,
+					settings = {},
+				},
+				denols = {
+					root_dir = lspconfig.util.root_pattern({ "deno.json", "deno.jsonc" }),
+					single_file_support = true,
+					settings = {},
+				},
 			}
 
 			-- By default Nvim doesn't support everything part of the LSP spec
@@ -120,8 +132,6 @@ return {
 			-- Here, we create new *capabilities* with nvim-cmp and broadcast them to the LSs
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
-			local lspconfig = require("lspconfig")
 
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
