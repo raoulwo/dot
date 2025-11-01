@@ -17,6 +17,10 @@ fi
 mkdir -p ~/.config/tmux
 ln -sf "$PWD/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
 
+# Set up neovim configuration.
+
+ln -sf "$PWD/nvim" "$HOME/.config/nvim"
+
 # Set up ideavim configuration.
 
 ln -sf "$PWD/idea/ideavimrc" "$HOME/.ideavimrc"

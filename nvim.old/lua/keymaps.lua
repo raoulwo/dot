@@ -20,8 +20,8 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 
 -- Move visual selection up/down while keeping indentation
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Keep screen centered when using <C-d> or <C-u>
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -31,17 +31,4 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<leader>n", "<cmd>Ex<CR>", { desc = "Open [N]etrw" })
 
 -- Yank to system clipboard
-vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank to system clipboard", noremap = true })
-vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system clipboard", noremap = true })
-vim.keymap.set("n", "<leader>Y", '"+y', { desc = "Yank to system clipboard" })
-
--- Paste without overwriting buffer
-vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without overriding buffer", noremap = true })
-
--- Delete into black hole register
-vim.keymap.set("n", "<leader>d", '"_d', { desc = "Delete into black hole register", noremap = true })
-vim.keymap.set("v", "<leader>d", '"_d', { desc = "Delete into black hole register", noremap = true })
-
--- Split windows
-vim.keymap.set("n", "<leader>%", "<cmd>vsplit<CR>", { desc = "Split window vertically" })
-vim.keymap.set("n", '<leader>"', "<cmd>split<CR>", { desc = "Split window horizontally" })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })

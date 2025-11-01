@@ -9,4 +9,6 @@ require("autocommands")
 require("lazy-bootstrap")
 require("lazy-plugins")
 
-vim.cmd.colorscheme("catppuccin")
+vim.opt.background = "dark"
+vim.cmd.colorscheme("gruvbox-material")
+-- vim.cmd.colorscheme("poimandres")
