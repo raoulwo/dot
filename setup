@@ -2,6 +2,17 @@
 
 set -e
 
-ln -sf "$PWD/nvim" "$HOME/.config/nvim"
-ln -sf "$PWD/tmux" "$HOME/.config/tmux"
-ln -sf "$PWD/idea" "$HOME/.ideavimrc"
+# Set up tmux configuration including theme and plugins.
+
+CATPPUCCIN_DIR=~/.config/tmux/plugins/catppuccin/tmux
+if [[ ! -d $CATPPUCCIN_DIR ]]; then
+	git clone -b v2.1.3 https://github.com/catppuccin/tmux.git $CATPPUCCIN_DIR
+fi
+
+TPM_DIR=~/.tmux/plugins/tpm
+if [[ ! -d $TPM_DIR ]]; then
+	git clone https://github.com/tmux-plugins/tpm $TPM_DIR
+fi
+
+mkdir -p ~/.config/tmux
+ln -sf "$PWD/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
