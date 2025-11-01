@@ -16,3 +16,7 @@ fi
 
 mkdir -p ~/.config/tmux
 ln -sf "$PWD/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
+
+# Set up ideavim configuration.
+
+ln -sf "$PWD/idea/ideavimrc" "$HOME/.ideavimrc"
