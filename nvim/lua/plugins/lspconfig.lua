@@ -105,46 +105,32 @@ return {
 			-- * `capabilities`: A table used to override fields in capabilities (can be used to disable features).
 			-- * `settings`: A table used to override the default settings passed when initializing a serve
 
-            -- See `:help lspconfig-all` for a list of all pre-configured LSPs
-            --[[
-			local servers = {
-				lua_ls = {
-					settings = {
-						Lua = {
-							completion = {
-								callSnippet = "Replace",
-							},
+			-- See `:help lspconfig-all` for a list of all pre-configured LSPs
+			vim.lsp.config("lua_ls", {
+				settings = {
+					Lua = {
+						completion = {
+							callSnippet = "Replace",
 						},
 					},
 				},
-				ts_ls = {
-					root_dir = vim.lsp.util.root_pattern({ "package.json", "tsconfig.json" }),
-					single_file_support = false,
-					settings = {},
-				},
-				denols = {
-					root_dir = lspconfig.util.root_pattern({ "deno.json", "deno.jsonc" }),
-					single_file_support = true,
-					settings = {},
-				},
-			}
-            --]]
-
-            vim.lsp.config("lua_ls", {
-                settings = {
-                    Lua = {
-                        completion = {
-                            callSnippet = "Replace",
-                        },
-                    }
-                },
-            })
+			})
 
 			vim.lsp.config("ts_ls", {
-                -- root_dir = vim.lsp.util.root_pattern({ "package.json", "tsconfig.json" }),
-                single_file_support = false,
-                settings = {},
-            })
+				root_markers = { "package.json", "tsconfig.json" },
+				single_file_support = false,
+				settings = {},
+			})
+
+			vim.lsp.config("denols", {
+				root_markers = { "deno.json", "deno.jsonc" },
+				single_file_support = true,
+				settings = {},
+			})
+
+			vim.lsp.config("pyright", {
+				settings = {},
+			})
 
 			-- By default Nvim doesn't support everything part of the LSP spec
 			-- By adding nvim-cmp, luasnip and so on, Nvim has more capabilities in this regard
@@ -183,11 +169,13 @@ return {
 
 			-- NOTE: Add other tools to be installed by Mason here
 			local ensure_installed = {
-                "lua_ls",
-                "ts_ls",
-                "tailwindcss",
-                "emmet_ls",
-            }
+				"lua_ls",
+				"ts_ls",
+				"denols",
+				"pyright",
+				"tailwindcss",
+				"emmet_ls",
+			}
 			vim.list_extend(ensure_installed, {
 				"stylua",
 			})
