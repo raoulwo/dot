@@ -9,4 +9,4 @@ require("autocommands")
 require("lazy-bootstrap")
 require("lazy-plugins")
 
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("rose-pine")

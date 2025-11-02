@@ -140,7 +140,12 @@ return {
 
 			vim.lsp.config("tailwindcss", {
 				capabilities = capabilities,
-				filetypes = { "html", "elixir", "eelixir", "heex" },
+				filetypes = {
+					"html",
+					-- "elixir",
+					-- "eelixir",
+					-- "heex",
+				},
 				init_options = {
 					userLanguages = {
 						elixir = "html-eex",
@@ -161,7 +166,13 @@ return {
 
 			vim.lsp.config("emmet_ls", {
 				capabilities = capabilities,
-				filetypes = { "html", "css", "elixir", "eelixir", "heex" },
+				filetypes = {
+					"html",
+					"css",
+					-- "elixir",
+					-- "eelixir",
+					-- "heex",
+				},
 			})
 
 			-- Ensure the servers and tools are installed
