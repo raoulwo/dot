@@ -2,12 +2,7 @@
 
 set -e
 
-# Set up tmux configuration including theme and plugins.
-
-CATPPUCCIN_DIR=~/.config/tmux/plugins/catppuccin/tmux
-if [[ ! -d $CATPPUCCIN_DIR ]]; then
-	git clone -b v2.1.3 https://github.com/catppuccin/tmux.git $CATPPUCCIN_DIR
-fi
+# Set up tmux configuration including plugins.
 
 TPM_DIR=~/.tmux/plugins/tpm
 if [[ ! -d $TPM_DIR ]]; then
