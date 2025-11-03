@@ -48,8 +48,8 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 -- Preview substitutions live
 vim.opt.inccommand = "split"
 
--- Disable the cursorline
-vim.opt.cursorline = false
+-- Set the cursorline
+vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 8
