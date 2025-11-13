@@ -122,10 +122,14 @@ return {
 				settings = {},
 			})
 
-			vim.lsp.config("denols", {
-				root_markers = { "deno.json", "deno.jsonc" },
-				single_file_support = true,
-				settings = {},
+			vim.lsp.config("intelephense", {
+				filetypes = {
+					"php",
+				},
+				init_options = {
+					licenceKey = "/Users/raoulwo/.intelephense/licence.txt",
+					globalStoragePath = "/Users/raoulwo/.intelephense/",
+				},
 			})
 
 			vim.lsp.config("pyright", {
@@ -169,6 +173,7 @@ return {
 				filetypes = {
 					"html",
 					"css",
+					"php",
 					-- "elixir",
 					-- "eelixir",
 					-- "heex",
@@ -182,7 +187,7 @@ return {
 			local ensure_installed = {
 				"lua_ls",
 				"ts_ls",
-				"denols",
+				"intelephense",
 				"pyright",
 				"tailwindcss",
 				"emmet_ls",
