@@ -9,13 +9,22 @@ if [[ ! -d $TPM_DIR ]]; then
 	git clone https://github.com/tmux-plugins/tpm $TPM_DIR
 fi
 
-mkdir -p ~/.config/tmux
+mkdir -p "$HOME/.config/tmux"
+rm -rf "$HOME/.config/tmux/tmux.conf"
 ln -sf "$PWD/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
 
 # Set up neovim configuration.
 
+rm -rf "$HOME/.config/nvim"
 ln -sf "$PWD/nvim" "$HOME/.config/nvim"
 
 # Set up ideavim configuration.
 
+rm -rf "$HOME/.ideavimrc"
 ln -sf "$PWD/idea/ideavimrc" "$HOME/.ideavimrc"
+
+# Link my scripts.
+
+mkdir -p "$HOME/.local/bin"
+rm -rf "$HOME/.local/bin/t"
+ln -s "$PWD/scripts/t" "$HOME/.local/bin/t"
