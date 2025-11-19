@@ -2,6 +2,10 @@ return {
 	{
 		-- Better highlighting, editing and navigation
 		"nvim-treesitter/nvim-treesitter",
+		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 		build = ":TSUpdate",
 		opts = {
 			-- NOTE: Add languages to be installed here
@@ -9,7 +13,7 @@ return {
 				"bash",
 				"c",
 				"diff",
-                "gitcommit",
+				"gitcommit",
 				"html",
 				"lua",
 				"luadoc",
@@ -28,9 +32,21 @@ return {
 			highlight = {
 				enable = true,
 				-- Some languages like Ruby depend on Vim's regex highlighting system for indentation
-				additional_vim_regex_highlighting = { "ruby" },
+				additional_vim_regex_highlighting = true,
 			},
 			indent = { enable = true, disable = { "ruby" } },
+			textobjects = {
+				select = {
+					enable = true,
+					lookahead = true,
+					keymaps = {
+						["if"] = "@function.inner",
+						["af"] = "@function.outer",
+						["ia"] = "@parameter.inner",
+						["aa"] = "@parameter.outer",
+					},
+				},
+			},
 		},
 		config = function(_, opts)
 			-- See `:help nvim-treesitter`
