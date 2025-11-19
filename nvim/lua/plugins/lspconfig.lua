@@ -174,6 +174,7 @@ return {
 					"html",
 					"css",
 					"php",
+					"blade",
 					-- "elixir",
 					-- "eelixir",
 					-- "heex",
