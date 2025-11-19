@@ -25,6 +25,13 @@ vim.opt.showmode = false
 -- Save undo history
 vim.opt.undofile = true
 
+-- Create a swapfile
+vim.opt.swapfile = true
+-- Backup a written file
+vim.opt.backup = true
+-- Keep backups out of the current directory
+vim.opt.backupdir:remove(".")
+
 -- Case-insensitive search unless one or more capital letters
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -45,6 +52,9 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
+-- Remove the `~` characters from end of buffer
+vim.opt.fillchars:append({ eob = " " })
+
 -- Preview substitutions live
 vim.opt.inccommand = "split"
 
@@ -53,8 +63,19 @@ vim.opt.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 
--- Don't create a swapfile
-vim.opt.swapfile = false
--- Don't backup a written file
-vim.opt.backup = false
+-- Complete the longest common match
+vim.opt.wildmode = "longest:full,full"
+
+-- Shows current file and working directory in tmux pane title
+vim.opt.title = true
+
+-- Enable all colors
+vim.opt.termguicolors = true
+
+-- Enable spell-checking
+vim.opt.spell = true
+
+-- Ask for confirmation instead of displaying error
+vim.opt.confirm = true
