@@ -18,6 +18,8 @@ return {
 
 			-- Signature help, docs and autocompletion for the Nvim Lua API
 			{ "folke/neodev.nvim", opts = {} },
+
+			"b0o/schemastore.nvim",
 		},
 		config = function()
 			-- Anytime the LSP attaches to a buffer the `callback` is executed
@@ -30,6 +32,14 @@ return {
 					local lsp_map = function(cmd, fn, desc)
 						vim.keymap.set("n", cmd, fn, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
+
+					vim.diagnostic.config({ virtual_lines = false })
+					vim.diagnostic.config({ virtual_text = false })
+
+					vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
+					vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
+					vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
+					vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
 					-- Go to the definition of the word under your cursor (<C-t> to go back)
 					lsp_map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
@@ -105,8 +115,15 @@ return {
 			-- * `capabilities`: A table used to override fields in capabilities (can be used to disable features).
 			-- * `settings`: A table used to override the default settings passed when initializing a serve
 
+			-- By default Nvim doesn't support everything part of the LSP spec
+			-- By adding nvim-cmp, luasnip and so on, Nvim has more capabilities in this regard
+			-- Here, we create new *capabilities* with nvim-cmp and broadcast them to the LSs
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
 			-- See `:help lspconfig-all` for a list of all pre-configured LSPs
 			vim.lsp.config("lua_ls", {
+				capabilities = capabilities,
 				settings = {
 					Lua = {
 						completion = {
@@ -116,15 +133,46 @@ return {
 				},
 			})
 
+			local vue_language_server_path = vim.fn.expand("$MASON/packages")
+				.. "/vue-language-server"
+				.. "/node_modules/@vue/language-server"
+
+			local vue_plugin = {
+				name = "@vue/typescript-plugin",
+				location = vue_language_server_path,
+				languages = { "vue" },
+				configNamespace = "typescript",
+			}
+
+			local tsserver_filetypes = {
+				"typescript",
+				"javascript",
+				"javascriptreact",
+				"typescriptreact",
+				"vue",
+			}
+
 			vim.lsp.config("ts_ls", {
-				root_markers = { "package.json", "tsconfig.json" },
-				single_file_support = false,
-				settings = {},
+				capabilities = capabilities,
+				init_options = {
+					plugins = {
+						vue_plugin,
+					},
+				},
+				filetypes = tsserver_filetypes,
 			})
 
+			vim.lsp.config("vue_ls", {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.enable({ "ts_ls", "vue_ls" })
+
 			vim.lsp.config("intelephense", {
+				capabilities = capabilities,
 				filetypes = {
 					"php",
+					"blade",
 				},
 				init_options = {
 					licenceKey = "/Users/raoulwo/.intelephense/licence.txt",
@@ -133,39 +181,12 @@ return {
 			})
 
 			vim.lsp.config("pyright", {
+				capabilities = capabilities,
 				settings = {},
 			})
 
-			-- By default Nvim doesn't support everything part of the LSP spec
-			-- By adding nvim-cmp, luasnip and so on, Nvim has more capabilities in this regard
-			-- Here, we create new *capabilities* with nvim-cmp and broadcast them to the LSs
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
 			vim.lsp.config("tailwindcss", {
 				capabilities = capabilities,
-				filetypes = {
-					"html",
-					-- "elixir",
-					-- "eelixir",
-					-- "heex",
-				},
-				init_options = {
-					userLanguages = {
-						elixir = "html-eex",
-						eelixir = "html-eex",
-						heex = "html-eex",
-					},
-				},
-				settings = {
-					tailwindCSS = {
-						experimental = {
-							classRegex = {
-								'class[:]\\s*"([^"]*)"',
-							},
-						},
-					},
-				},
 			})
 
 			vim.lsp.config("emmet_ls", {
@@ -173,11 +194,29 @@ return {
 				filetypes = {
 					"html",
 					"css",
-					"php",
-					"blade",
+					"sass",
+					"scss",
+					"less",
+					-- "vue",
+					-- "svelte",
+					-- "javascript",
+					-- "javascriptreact",
+					-- "typescriptreact",
+					-- "php",
+					-- "blade",
 					-- "elixir",
 					-- "eelixir",
 					-- "heex",
+				},
+			})
+
+			vim.lsp.config("jsonls", {
+				capabilities = capabilities,
+				settings = {
+					json = {
+						schemas = require("schemastore").json.schemas(),
+						validate = { enable = true },
+					},
 				},
 			})
 
@@ -186,12 +225,13 @@ return {
 
 			-- NOTE: Add other tools to be installed by Mason here
 			local ensure_installed = {
-				"lua_ls",
 				"ts_ls",
+				"vue_ls",
 				"intelephense",
-				"pyright",
 				"tailwindcss",
 				"emmet_ls",
+				"lua_ls",
+				"pyright",
 			}
 			vim.list_extend(ensure_installed, {
 				"stylua",

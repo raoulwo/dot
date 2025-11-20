@@ -22,7 +22,11 @@ return {
 
 			-- nvim-cmp doesn't ship all sources by default, they are split into multiple repos
 			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
+			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"onsails/lspkind-nvim",
 		},
 		config = function()
 			-- See `:help cmp`
@@ -72,8 +76,15 @@ return {
 
 				sources = {
 					{ name = "nvim_lsp" },
+					{ name = "nvim_lsp_signature_help" },
 					{ name = "luasnip" },
+					{ name = "buffer" },
 					{ name = "path" },
+					{ name = "cmdline" },
+				},
+
+				experimental = {
+					ghost_text = true,
 				},
 			})
 		end,
