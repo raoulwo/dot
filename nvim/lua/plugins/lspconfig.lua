@@ -36,10 +36,24 @@ return {
 					vim.diagnostic.config({ virtual_lines = false })
 					vim.diagnostic.config({ virtual_text = false })
 
-					vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
-					vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
-					vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
-					vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
+					-- Highlight entire line for errors
+					-- Highlight the line number for warnings
+					vim.diagnostic.config({
+						signs = {
+							text = {
+								[vim.diagnostic.severity.ERROR] = "",
+								[vim.diagnostic.severity.WARN] = "",
+								[vim.diagnostic.severity.INFO] = "",
+								[vim.diagnostic.severity.HINT] = "",
+							},
+							linehl = {
+								[vim.diagnostic.severity.ERROR] = "ErrorMsg",
+							},
+							numhl = {
+								[vim.diagnostic.severity.WARN] = "WarningMsg",
+							},
+						},
+					})
 
 					-- Go to the definition of the word under your cursor (<C-t> to go back)
 					lsp_map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
@@ -180,6 +194,19 @@ return {
 				},
 			})
 
+			vim.lsp.config("phpactor", {
+				cmd = { "phpactor", "language-server" },
+				filetypes = { "php" },
+				root_markers = { ".git", "composer.json", ".phpactor.json", ".phpactor.yml" },
+				workspace_required = true,
+				init_options = {
+					["language_server_phpstan.enabled"] = false,
+					["language_server_psalm.enabled"] = false,
+				},
+			})
+
+			vim.lsp.enable("phpactor")
+
 			vim.lsp.config("pyright", {
 				capabilities = capabilities,
 				settings = {},
@@ -228,6 +255,7 @@ return {
 				"ts_ls",
 				"vue_ls",
 				"intelephense",
+				"phpactor",
 				"tailwindcss",
 				"emmet_ls",
 				"lua_ls",
