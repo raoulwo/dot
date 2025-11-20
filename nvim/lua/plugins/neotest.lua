@@ -1,0 +1,62 @@
+return {
+	-- {
+	-- 	"nvim-neotest/neotest",
+	-- 	dependencies = {
+	-- 		"nvim-neotest/nvim-nio",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"antoinemadec/FixCursorHold.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 		-- NOTE: Add adapters here.
+	-- 		"V13Axel/neotest-pest",
+	-- 		"olimorris/neotest-phpunit",
+	-- 	},
+	-- 	config = function()
+	-- 		require("neotest").setup({
+	-- 			adapters = {
+	-- 				require("neotest-phpunit")({
+	-- 					filter_dirs = { "vendor" },
+	-- 					root_ignore_files = { "tests/Pest.php" },
+	-- 				}),
+	-- 				require("neotest-pest")({}),
+	-- 			},
+	-- 		})
+	--
+	-- 		vim.keymap.set("n", "<leader>tn", function()
+	-- 			require("neotest").run.run()
+	-- 		end)
+	--
+	-- 		vim.keymap.set("n", "<leader>tr", function()
+	-- 			require("neotest").run.run("tests")
+	-- 		end)
+	-- 		vim.keymap.set("n", "<leader>tn", function()
+	-- 			require("neotest").run.run()
+	-- 		end)
+	-- 		vim.keymap.set("n", "<leader>tf", function()
+	-- 			require("neotest").run.run(vim.fn.expand("%"))
+	-- 		end)
+	-- 		vim.keymap.set("n", "<leader>tl", function()
+	-- 			require("neotest").output_panel.clear()
+	-- 			require("neotest").run.run_last()
+	-- 		end)
+	-- 		vim.keymap.set("n", "<leader>te", function()
+	-- 			require("neotest").run.stop()
+	-- 		end)
+	-- 		vim.keymap.set("n", "<leader>ta", function()
+	-- 			require("neotest").run.attach()
+	-- 		end)
+	-- 		vim.keymap.set("n", "<leader>tw", function()
+	-- 			require("neotest").run.watch()
+	-- 		end)
+	-- 		vim.keymap.set("n", "<leader>to", function()
+	-- 			require("neotest").output.open({ enter = true })
+	-- 		end)
+	-- 		vim.keymap.set("n", "<leader>tO", function()
+	-- 			require("neotest").output_panel.toggle()
+	-- 		end)
+	-- 		vim.keymap.set("n", "<leader>ts", function()
+	-- 			require("neotest").summary.toggle()
+	-- 		end)
+	-- 		vim.keymap.set("n", "<leader>tg", ":vsplit<CR>:A<CR>")
+	-- 	end,
+	-- },
+}
