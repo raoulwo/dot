@@ -232,6 +232,7 @@ return {
 				"emmet_ls",
 				"lua_ls",
 				"pyright",
+				"jsonls",
 			}
 			vim.list_extend(ensure_installed, {
 				"stylua",
