@@ -18,6 +18,11 @@ ln -sf "$PWD/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
 rm -rf "$HOME/.config/nvim"
 ln -sf "$PWD/nvim" "$HOME/.config/nvim"
 
+# Set up phpactor configuration.
+
+rm -rf "$HOME/.config/phpactor"
+ln -sf "$PWD/phpactor" "$HOME/.config/phpactor"
+
 # Set up ideavim configuration.
 
 rm -rf "$HOME/.ideavimrc"

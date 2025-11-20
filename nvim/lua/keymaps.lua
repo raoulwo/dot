@@ -32,7 +32,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Open Netrw
-vim.keymap.set("n", "<leader>n", "<cmd>Ex<CR>", { desc = "Open [N]etrw" })
+-- vim.keymap.set("n", "<leader>n", "<cmd>Ex<CR>", { desc = "Open [N]etrw" })
 
 -- Open current file in default MacOS application
 vim.keymap.set("n", "<leader>x", ":!open %<CR><CR>")
