@@ -55,7 +55,7 @@ return {
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
 
 					-- [Y]es to accept the completion
-					["<Tab>"] = cmp.mapping.confirm({ select = true }),
+					["<C-y>"] = cmp.mapping.confirm({ select = true }),
 
 					-- Manually trigger a completion
 					["<C-space>"] = cmp.mapping.complete({}),
