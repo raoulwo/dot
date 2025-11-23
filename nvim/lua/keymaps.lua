@@ -53,5 +53,7 @@ vim.keymap.set("v", "<leader>d", '"_d', { desc = "Delete into black hole registe
 vim.keymap.set("n", "<leader>%", "<cmd>vsplit<CR>", { desc = "Split window vertically" })
 vim.keymap.set("n", '<leader>"', "<cmd>split<CR>", { desc = "Split window horizontally" })
 
+-- Save
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save buffer" })
 -- Quit
 vim.keymap.set("n", "Q", ":q<CR>", { desc = "Quit buffer" })
