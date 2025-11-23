@@ -59,7 +59,7 @@ vim.opt.fillchars:append({ eob = " " })
 vim.opt.inccommand = "split"
 
 -- Set the cursorline
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor
 vim.opt.scrolloff = 8
