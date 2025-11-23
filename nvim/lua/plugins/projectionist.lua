@@ -47,6 +47,10 @@ return {
 						type = "migration",
 					},
 				},
+
+				vim.keymap.set("n", "<leader>aa", ":A<CR>"),
+				vim.keymap.set("n", "<leader>as", ":AS<CR>"),
+				vim.keymap.set("n", "<leader>av", ":AV<CR>"),
 			}
 		end,
 	},
