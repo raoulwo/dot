@@ -48,9 +48,9 @@ return {
 					},
 				},
 
-				vim.keymap.set("n", "<leader>aa", ":A<CR>"),
-				vim.keymap.set("n", "<leader>as", ":AS<CR>"),
-				vim.keymap.set("n", "<leader>av", ":AV<CR>"),
+				vim.keymap.set("n", "<leader>AA", ":A<CR>"),
+				vim.keymap.set("n", "<leader>AS", ":AS<CR>"),
+				vim.keymap.set("n", "<leader>AV", ":AV<CR>"),
 			}
 		end,
 	},
