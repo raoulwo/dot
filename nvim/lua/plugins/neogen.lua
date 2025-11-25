@@ -9,13 +9,13 @@ return {
 
 			vim.keymap.set(
 				"n",
-				"<leader>aa",
+				"<leader>af",
 				":lua require('neogen').generate({ type = 'func' })<CR>",
 				{ desc = "Generate function annotation" }
 			)
 			vim.keymap.set(
 				"n",
-				"<leader>af",
+				"<leader>aa",
 				":lua require('neogen').generate({ type = 'file' })<CR>",
 				{ desc = "Generate file annotation" }
 			)
