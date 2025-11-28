@@ -28,9 +28,12 @@ return {
 			end,
 			formatters_by_ft = {
 				-- NOTE: You can add formatters to run automatically here
-				bash = { "shfmt" },
-				go = { "gofmt" },
 				lua = { "stylua" },
+				bash = { "shfmt" },
+				sh = { "shfmt" },
+				php = { "pint" },
+				blade = { "blade-formatter", "rustywind" },
+				go = { "gofmt" },
 			},
 		},
 	},

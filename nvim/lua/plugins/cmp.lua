@@ -42,6 +42,10 @@ return {
 				},
 				completion = { completeopt = "menu,menuone,noinsert" },
 
+				formatting = {
+					format = require("tailwindcss-colorizer-cmp").formatter,
+				},
+
 				-- See `:help ins-completion`
 				mapping = cmp.mapping.preset.insert({
 					-- Select the [n]ext item
@@ -86,6 +90,16 @@ return {
 				experimental = {
 					ghost_text = true,
 				},
+			})
+		end,
+	},
+
+	{
+		"roobert/tailwindcss-colorizer-cmp.nvim",
+		-- optionally, override the default options:
+		config = function()
+			require("tailwindcss-colorizer-cmp").setup({
+				color_square_width = 2,
 			})
 		end,
 	},
