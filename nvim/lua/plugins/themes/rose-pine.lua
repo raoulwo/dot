@@ -3,11 +3,18 @@ return {
 		"rose-pine/neovim",
 		name = "rose-pine",
 		opts = {
-			variant = "main",
+			variant = "auto",
 			dark_variant = "main",
+			dim_inactive_windows = false,
+			extend_background_behind_borders = true,
+			enable = {
+				terminal = true,
+				legacy_highlights = true,
+				migrations = true,
+			},
 			styles = {
 				bold = true,
-				italic = false,
+				italic = true,
 				transparency = false,
 			},
 			highlight_groups = {

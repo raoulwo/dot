@@ -50,71 +50,73 @@ return {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
-			-- options = {
-			-- 	icons_enabled = "true",
-			-- 	theme = "auto",
-			-- 	component_separators = { left = "", right = "" },
-			-- 	section_separators = { left = "", right = "" },
-			-- },
-			-- {
 			options = {
-				section_separators = "",
-				component_separators = "",
-				globalstatus = true,
-				theme = {
-					normal = {
-						a = "StatusLine",
-						b = "StatusLine",
-						c = "StatusLine",
-					},
-				},
+				icons_enabled = "true",
+				theme = "auto",
+				-- component_separators = { left = "", right = "" },
+				-- section_separators = { left = "", right = "" },
+				-- component_separators = { left = "|", right = "|" },
+				-- section_separators = { left = "█", right = "█" },
 			},
-			sections = {
-				lualine_a = {
-					{
-						"mode",
-						color = mode_color_fn,
-					},
-					separator,
-				},
-				lualine_b = {
-					{
-						"branch",
-						color = { fg = colors.love },
-					},
-					"diff",
-					separator,
-					'"󰿘 " .. tostring(#vim.tbl_keys(vim.lsp.get_clients()))',
-					{ "diagnostics", sources = { "nvim_diagnostic" } },
-					separator,
-				},
-				lualine_c = {
-					{
-						"filename",
-						color = { fg = colors.pine },
-					},
-				},
-				lualine_x = {
-					"filetype",
-					"encoding",
-					"fileformat",
-				},
-				lualine_y = {
-					separator,
-					'(vim.bo.expandtab and "␠ " or "⇥ ") .. " " .. vim.bo.shiftwidth',
-					separator,
-				},
-				lualine_z = {
-					{
-						"progress",
-						color = mode_color_fn,
-					},
-					{
-						"location",
-						color = mode_color_fn,
-					},
-				},
-			},
+			-- {
+			-- options = {
+			-- 	section_separators = "",
+			-- 	component_separators = "",
+			-- 	globalstatus = true,
+			-- 	theme = {
+			-- 		normal = {
+			-- 			a = "StatusLine",
+			-- 			b = "StatusLine",
+			-- 			c = "StatusLine",
+			-- 		},
+			-- 	},
+			-- },
+			-- sections = {
+			-- 	lualine_a = {
+			-- 		{
+			-- 			"mode",
+			-- 			color = mode_color_fn,
+			-- 		},
+			-- 		separator,
+			-- 	},
+			-- 	lualine_b = {
+			-- 		{
+			-- 			"branch",
+			-- 			color = { fg = colors.love },
+			-- 		},
+			-- 		"diff",
+			-- 		separator,
+			-- 		'"󰿘 " .. tostring(#vim.tbl_keys(vim.lsp.get_clients()))',
+			-- 		{ "diagnostics", sources = { "nvim_diagnostic" } },
+			-- 		separator,
+			-- 	},
+			-- 	lualine_c = {
+			-- 		{
+			-- 			"filename",
+			-- 			color = { fg = colors.pine },
+			-- 		},
+			-- 	},
+			-- 	lualine_x = {
+			-- 		"filetype",
+			-- 		"encoding",
+			-- 		"fileformat",
+			-- 	},
+			-- 	lualine_y = {
+			-- 		separator,
+			-- 		'(vim.bo.expandtab and "␠ " or "⇥ ") .. " " .. vim.bo.shiftwidth',
+			-- 		separator,
+			-- 	},
+			-- 	lualine_z = {
+			-- 		{
+			-- 			"progress",
+			-- 			color = mode_color_fn,
+			-- 		},
+			-- 		{
+			-- 			"location",
+			-- 			color = mode_color_fn,
+			-- 		},
+			-- 	},
+			-- },
 		},
 	},
 }
