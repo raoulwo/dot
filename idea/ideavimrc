@@ -1,25 +1,40 @@
 let mapleader = " "
 
-" Options
-set ideajoin
-set visualbell
-set number
-set relativenumber
-set scrolloff=8
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
-set history=1000
-
 " Plugins
 set commentary
 set highlightedyank
+set NERDTree
+
+" Options
+
+set history=1000
+
+set visualbell
+
+set number
+set relativenumber
+
+set incsearch
+set hlsearch
+
+set ignorecase
+set smartcase
+
+set scrolloff=8
+set sidescrolloff=8
+
+set showcmd
+set showmode
+
+set ideajoin
+set ideamarks
+
+" Keymaps
 
 " Clear search results
 nnoremap <Esc> :nohlsearch<CR>
 
-" Consistent with C and D
+" Consistent yanking until end-of-line
 nnoremap Y y$
 
 " Window navigation
@@ -42,75 +57,36 @@ nnoremap <C-u> <C-u>zz
 nnoremap n nzz
 nnoremap N Nzz
 
-" Paste without overwriting buffer
-xnoremap <Leader>p "_dP
+" Toggle project and terminal windows
+map <Leader>p <Action>(ActivateProjectToolWindow)
+map <Leader>t <Action>(ActivateTerminalToolWindow)
+" Hide all windows
+map <Leader>h <Action>(HideAllWindows)
 
-" Yank into clipboard
-nnoremap <Leader>y "+y
-vnoremap <Leader>y "+y
-nmap <Leader>Y "+Y
-
-" Delete into black hole register
-nnoremap <Leader>d "_d
-vnoremap <Leader>d "_d
-
-" Open the switcher, file history, file structure
+" Open the switcher
 map <Leader><Leader> <Action>(Switcher)
-map <Leader>h <Action>(LocalHistory.ShowHistory)
+
+" Open the file structure
 map <Leader>f <Action>(FileStructurePopup)
 
 " Show intention actions
 map <Leader>i <Action>(ShowIntentionActions)
 
-" Open/Hide windows
-map <Leader>wg <Action>(ActivateVersionControlToolWindow)
-map <Leader>wp <Action>(ActivateProjectToolWindow)
-map <Leader>wt <Action>(ActivateTerminalToolWindow)
-map <Leader>wh <Action>(HideAllWindows)
+" Toggle distraction free mode
+map <Leader>z <Action>(ToggleDistractionFreeMode)
 
-" Close editors
-map <Leader>q <Action>(CloseEditor)
-map <Leader>Q <Action>(CloseAllEditors)
-
-" Toggle zen, presentation modes
-map <Leader>mz <Action>(ToggleZenMode)
-map <Leader>mp <Action>(TogglePresentationMode)
-
-" Run/Debug configurations
-map <Leader>, <Action>(Run)
-map <Leader>. <Action>(Debug)
-map <Leader>/ <Action>(Stop)
-map <Leader>cr <Action>(ChooseRunConfiguration)
-map <Leader>cd <Action>(ChooseDebugConfiguration)
-
-" Git
-map <Leader>gg <Action>(Vcs.QuickListPopupAction)
-map <Leader>ga <Action>(Annotate)
-map <Leader>gc <Action>(CheckinProject)
-map <Leader>gp <Action>(Vcs.Push)
-
-" Search files, symbols, grep...
-map <Leader>se <Action>(SearchEverywhere)
-map <Leader>sa <Action>(GotoAction)
-map <Leader>sf <Action>(GotoFile)
-map <Leader>ss <Action>(GotoSymbol)
-map <Leader>st <Action>(GotoClass)
+" Search everywhere
+map <Leader>sf <Action>(SearchEverywhere)
+" Find in files
 map <Leader>sg <Action>(FindInPath)
 
-" Refactor, reformat, rename, replace...
+" Refactor, reformat, rename...
 map <Leader>rr <Action>(Refactorings.QuickListPopupAction)
 map <Leader>rf <Action>(ReformatCode)
 map <Leader>ri <Action>(OptimizeImports)
 map <Leader>rn <Action>(RenameElement)
-map <Leader>rN <Action>(RenameFile)
-map <Leader>rp <Action>(Replace)
+map <Leader>rm <Action>(RenameFile)
 
-" Jump to type declaration
-map gD <Action>(GotoTypeDeclaration)
-
-" Jump to next/previous tabs
-map <A-h> <Action>(PreviousTab)
-map <A-l> <Action>(NextTab)
 " Jump to next/previous errors
 map ]d <Action>(GotoNextError)
 map [d <Action>(GotoPreviousError)
@@ -119,14 +95,6 @@ map [d <Action>(GotoPreviousError)
 map gn <Action>(GotoNextElementUnderCaretUsage)
 map gN <Action>(GotoPrevElementUnderCaretUsage)
 
-" Use built-in navigation ...
+" Use built-in navigation
 map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
-" ... but preserve default navigation
-map g<C-o> <C-o>
-map g<C-i> <C-i>
-
-" Toggle, remove, view breakpoints
-map <Leader>bt <Action>(ToggleLineBreakpoint)
-map <Leader>br <Action>(Debugger.RemoveAllBreakpoints)
-map <Leader>bv <Action>(ViewBreakpoints)
