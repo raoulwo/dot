@@ -58,11 +58,11 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap n nzz
 nnoremap N Nzz
 
-" Toggle project and terminal windows
-map <Leader>p <Action>(ActivateProjectToolWindow)
-map <Leader>t <Action>(ActivateTerminalToolWindow)
 " Hide all windows
 map <Leader>h <Action>(HideAllWindows)
+
+" Toggle terminal window
+map \\ <Action>(ActivateTerminalToolWindow)
 
 " Open the switcher
 map <Leader><Leader> <Action>(Switcher)
@@ -87,6 +87,9 @@ map <Leader>rf <Action>(ReformatCode)
 map <Leader>ri <Action>(OptimizeImports)
 map <Leader>rn <Action>(RenameElement)
 map <Leader>rm <Action>(RenameFile)
+
+" Show diagnostics
+map <leader>e <Action>(ShowErrorDescription)
 
 " Jump to next/previous errors
 map ]d <Action>(GotoNextError)
