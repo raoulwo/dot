@@ -1,68 +1,16 @@
 return {
-	{
-		-- Better highlighting, editing and navigation
-		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"JoosepAlviste/nvim-ts-context-commentstring",
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
-		build = ":TSUpdate",
-		opts = {
-			-- NOTE: Add languages to be installed here
-			ensure_installed = {
-				"bash",
-				"c",
-				"diff",
-				"gitcommit",
-				"html",
-				"lua",
-				"luadoc",
-				"markdown",
-				"ruby",
-				"vim",
-				"vimdoc",
-				"elixir",
-				"erlang",
-				"eex",
-				"heex",
-			},
-
-			-- Automatically install languages that aren't installed
-			auto_install = true,
-			highlight = {
-				enable = true,
-				-- Some languages like Ruby depend on Vim's regex highlighting system for indentation
-				additional_vim_regex_highlighting = true,
-			},
-			indent = { enable = true, disable = { "ruby" } },
-			textobjects = {
-				select = {
-					enable = true,
-					lookahead = true,
-					keymaps = {
-						["if"] = "@function.inner",
-						["af"] = "@function.outer",
-						["ia"] = "@parameter.inner",
-						["aa"] = "@parameter.outer",
-					},
-				},
-			},
-		},
-		config = function(_, opts)
-			-- See `:help nvim-treesitter`
-
-			-- Prefer git instead of curl
-			require("nvim-treesitter.install").prefer_git = true
-			---@diagnostic disable-next-line: missing-fields
-			require("nvim-treesitter.configs").setup(opts)
-
-			-- There are additional nvim-treesitter modules that you can use to interact with nvim-treesitter
-			--   * Incremental selection: See `:help nvim-treesitter-incremental-selection-mod`
-			--   * Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-			--   * Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-		end,
-	},
-	{
-		"HiPhish/rainbow-delimiters.nvim",
-	},
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  lazy = false,
+  opts = {
+    -- The core essentials to make sure your errors don't come back
+    ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
+    
+    -- Automatically install missing parsers when you enter a new file type
+    auto_install = true,
+    
+    highlight = {
+      enable = true,
+    },
+  },
 }

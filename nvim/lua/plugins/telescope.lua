@@ -1,30 +1,15 @@
 return {
-	{
-		-- Fuzzy finder
-		"nvim-telescope/telescope.nvim",
-		event = "VimEnter",
-		branch = "0.1.x",
-		dependencies = {
-			-- Lua library for Nvim
-			"nvim-lua/plenary.nvim",
-
-			-- `build` is used to run a command when the plugin is installed/updated
-			-- It isn't executed every time Nvim starts up
-			build = "make",
-
-			-- `cond` is a condition used to determine if the plugin should be installed and loaded
-			cond = function()
-				return vim.fn.executable("make") == 1
-			end,
-
-			-- Sets `vim.ui.select` to Telescope
-			{ "nvim-telescope/telescope-ui-select.nvim" },
-
-			-- For icons (requires a Nerd Font)
-			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
-		},
-		config = function()
-			-- Telescope key mappings:
+    {
+        'nvim-telescope/telescope.nvim', version = '*',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install',
+            },
+        },
+        config = function()
+            -- Telescope key mappings:
 			-- * Insert mode: <C-/>
 			-- * Normal mode: ?
 
@@ -81,6 +66,6 @@ return {
 			vim.keymap.set("n", "<leader>sn", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
 			end, { desc = "[S]earch [N]eovim Files" })
-		end,
-	},
+        end
+    }
 }

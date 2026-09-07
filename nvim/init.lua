@@ -5,8 +5,7 @@ vim.g.have_nerd_font = true
 
 require("options")
 require("keymaps")
-require("autocommands")
 require("lazy-bootstrap")
 require("lazy-plugins")
 
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("everforest")
