@@ -8,4 +8,4 @@ require("keymaps")
 require("lazy-bootstrap")
 require("lazy-plugins")
 
-vim.cmd.colorscheme("everforest")
+vim.cmd.colorscheme("rose-pine")
