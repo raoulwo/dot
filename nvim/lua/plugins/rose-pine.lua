@@ -9,6 +9,10 @@ return {
       dim_inactive_background = false,
       extend_background_under_cursor = true,
 
+      highlight_groups = {
+          ["@parameter"] = { fg = "pine" },
+      },
+
       styles = {
         bold = true,
         italic = true,
