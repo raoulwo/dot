@@ -18,9 +18,6 @@ return {
 			-- UI for notifications and LSP messages
 			{ "j-hui/fidget.nvim", opts = {} },
 
-			-- Signature help, docs and autocompletion for the Nvim Lua API
-			{ "folke/neodev.nvim", opts = {} },
-
 			"b0o/schemastore.nvim",
 		},
 		config = function()
